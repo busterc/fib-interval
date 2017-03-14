@@ -1,0 +1,43 @@
+{
+  "name": "fib-interval",
+  "version": "1.0.0",
+  "description": "setInterval using a series of incrementing Fibonacci durations",
+  "repository": "busterc/fib-interval",
+  "scripts": {
+    "lint": "eslint --ignore-pattern /dist/ .",
+    "build": "npm install && mkdir -p ./dist && rm -rf ./dist/* && browserify index.js -s fibInterval -o ./dist/fibInterval.js && (cd ./dist && uglifyjs fibInterval.js -c -m -o fibInterval.min.js --source-map fibInterval.min.map)",
+    "test": "npm install && npm run lint && tap test.js --coverage-report=text",
+    "test-browser": "npm run build && open test.html"
+  },
+  "files": [
+    "dist",
+    "index.js"
+  ],
+  "main": "index.js",
+  "keywords": [
+    "setInterval",
+    "fibonacci",
+    "fib",
+    "setTimeout",
+    "interval",
+    "intervals",
+    "delay",
+    "backoff",
+    "retry",
+    "exponential",
+    "sequence",
+    "series",
+    "number",
+    "increment",
+    "incrementing"
+  ],
+  "author": "Buster Collings <busterc@gmail.com> (https://about.me/buster)",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "eslint": "^3.17.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "tap": "^10.3.0",
+    "uglifyjs": "^2.4.10"
+  }
+}

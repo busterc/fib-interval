@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>fibInterval tests</title>
+  <script src="./dist/fibInterval.min.js"></script>
+</head>
+
+<body>
+  <h1>fibInterval</h1>
+  <div id="results">testing...</div>
+
+  <script>
+    var runner = fibInterval(function () {
+      console.log('runner.delay()', runner.delay());
+      if (runner.delay() > 50) {
+        clearTimeout(tooLong);
+        runner.clear();
+        document.getElementById('results').innerHTML = 'passed';
+        console.log('passed');
+      }
+    }, [0, 1]);
+    var tooLong = setTimeout(function () {
+      runner.clear();
+      document.getElementById('results').innerHTML = 'failed';
+    }, 200);
+  </script>
+</body>
+
+</html>
