@@ -1,5 +1,7 @@
 # fib-interval [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/busterc/fib-interval.svg)](https://greenkeeper.io/)
+
 > setInterval using a series of incrementing Fibonacci durations
 
 
